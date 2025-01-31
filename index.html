@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100 relative">
+  <div class="w-auto">
+    <!-- Card Section -->
+    <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-md md:shadow-lg">
+      <!-- Head Section -->
+      <div class="head flex items-start justify-between w-full">
+        <!-- Text Container -->
+        <div class="p-5 text-container flex flex-col">
+          <h2 class="text-xl font-bold">Todo Done</h2>
+          <h4 class="text-sm text-gray-500">Keep it up!</h4>
+        </div>
+
+        <!-- Circle -->
+        <div class="curcle bg-blue-400 flex justify-center items-center rounded-full w-20 h-20">
+          <h2 class="text-white text-xl font-bold">0/0</h2>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="w-full bg-gray-200 h-3 rounded-full mt-4">
+        <div class="bg-blue-500 h-3 rounded-full" style="width: 0%;"></div>
+      </div>
+
+      <!-- Form -->
+      <div class="form flex flex-col mt-5 items-center">
+        <form action="#" class="flex flex-row items-center space-x-2">
+          <input
+            type="text" id="taskinput"
+            placeholder="Enter your task name"
+            class="text-black font-bold bg-white rounded-2xl text-center p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button
+            type="submit" id="newtask"
+            class="bg-blue-500 text-white font-bold rounded-full h-10 w-10 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            +
+          </button>
+        </form>
+      </div>
+
+      <!-- Task List -->
+      <ul id="task-list" class="mt-5 space-y-2 w-full"></ul>
+    </div>
+  </div>
+
+  <!-- Congratulations Animation -->
+  <div
+    id="congratulations"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div
+      class="bg-white p-8 rounded-xl shadow-lg text-center animate-bounce space-y-4"
+    >
+      <h2 class="text-2xl font-bold">🎉 Congratulations! 🎉</h2>
+      <p class="text-gray-600">You have completed all your tasks!</p>
+      <button
+        id="closeCongrats"
+        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
